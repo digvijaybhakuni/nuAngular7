@@ -1,0 +1,7 @@
+<div class="form-group">
+  <label [for]="refId">{{name}}</label>
+  <ng-content select=".form-control"></ng-content>
+  <div class="invalid-feedback">
+      <ng-content select="[invalid]"></ng-content>
+  </div>
+</div>

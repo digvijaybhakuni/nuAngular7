@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <form #loginForm="ngForm" (submit)="login(loginForm)">
+    <div class="form-group">
+      <label [for]="'exampleInputEmail1'">Email address</label>
+      <input type="email" class="form-control" [class.is-invalid]="loginForm.submitted && loginForm.controls['email']?.invalid"
+        id="exampleInputEmail1" [(ngModel)]="init.email" name="email" aria-describedby="emailHelp" placeholder="Enter email"
+        required>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <nu7-form-group refId="exampleInputPassword1" name="Password">
+        <input type="password" class="form-control" [class.is-invalid]="loginForm.controls['password']?.dirty && loginForm.controls['password']?.invalid"
+        id="exampleInputPassword1" [(ngModel)]="init.password" name="password" placeholder="Password" required
+        minlength="4">
+        <span invalid *ngIf="loginForm.controls['password']?.errors?.required" > Password cannot be empty </span>
+        <span invalid *ngIf="loginForm.controls['password']?.errors?.minlength" > Password minlength should be 4 </span>
+    </nu7-form-group>
+    <!-- <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [class.is-invalid]="loginForm.controls['password']?.dirty && loginForm.controls['password']?.invalid"
+        id="exampleInputPassword1" [(ngModel)]="init.password" name="password" placeholder="Password" required
+        minlength="5">
+      <div class="invalid-feedback">
+        <ng-container *ngIf="loginForm.controls['password']?.errors?.required">
+          Password cannot be empty
+        </ng-container>
+        <ng-container *ngIf="loginForm.controls['password']?.errors?.minlength">
+            Password minlength should be 5
+          </ng-container>
+      </div>
+    </div> -->
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
