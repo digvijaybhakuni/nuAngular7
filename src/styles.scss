@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-size: 12px;
+}
+
+table.dg-table {
+
+    .ui-table-thead > tr{
+        border-bottom: .1em solid black;
+        border-top: .1em solid black;
+        th {
+            border: none;
+        }
+    }
+    .ui-table-tbody {
+        tr{
+            border-bottom: .1em solid black;
+            td{
+                border: none;
+                color: black;
+            }
+        }
+    }
+}
